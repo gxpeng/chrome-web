@@ -4,9 +4,9 @@ Documentation=man:Xvnc
 After=systemd-journald.service
 
 [Service]
-User=app
+User=_USER_
 Type=simple
-ExecStart=/usr/bin/Xvnc :0 -nolisten tcp -UseIPv4 -interface lo -localhost -SecurityTypes None -rfbport 5900 -desktop chrome -nevershared -noclipboard -noreset -DisconnectClients -screen scrn 1280x1024x24
+ExecStart=/usr/bin/Xvnc :0 -nolisten tcp -UseIPv4 -interface lo -localhost -SecurityTypes vncauth,tlsvnc -PasswordFile /home/_USER_/.vnc/passwd -rfbport 5900 -desktop chrome -nevershared -noclipboard -noreset -DisconnectClients -screen scrn _WIDTH_x_HIGHT_x24
 
 [Install]
 WantedBy=multi-user.target

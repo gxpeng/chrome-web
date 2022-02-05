@@ -5,9 +5,9 @@ After=tgvnc.service chrome.service
 Requires=tgvnc.service chrome.service
 
 [Service]
-User=app
+User=_USER_
 Type=simple
-ExecStart=/usr/bin/novnc_server --listen 3000 --web /usr/share/novnc --vnc localhost:5900
+ExecStart=/usr/bin/novnc_server --listen _PORT_ --web /usr/share/novnc --vnc localhost:5900
 Restart=always
 
 [Install]
