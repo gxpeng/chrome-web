@@ -17,6 +17,8 @@ RUN /sbin/useradd app;cd /etc/systemd/system/multi-user.target.wants; \
 
 COPY index.html /usr/share/novnc
 
+# Fonts
+COPY fonts /usr/share/fonts/ 
 # Define working directory.
 WORKDIR /tmp
 
