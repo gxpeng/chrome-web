@@ -2,7 +2,8 @@
 docker pull tekfik/chrome
 docker run --name chrome --privileged -p 5800:3000 -d tekfik/chrome
 docker exec -it chrome /bin/bash
-yum -y install sudo unzip google-chrome-stable
+yum -y install google-chrome-stable
+yum -y install sudo unzip
 wget https://codeload.github.com/gxpeng/chrome-web-docker/zip/refs/heads/master
 unzip master
 /bin/cp -f chrome-web-docker-master/system/* /etc/systemd/system/
@@ -27,3 +28,5 @@ echo -e "${VNC_PASSWD}\n${VNC_PASSWD}\n\n" | sudo -Hu ${VNC_USER} vncpasswd
 ln -sf /usr/share/zoneinfo/${VNC_TimeZone} /etc/localtime
 rm -rf chrome-web-docker-master
 rm -f master 
+exit
+docker restart chrome
