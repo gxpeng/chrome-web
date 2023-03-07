@@ -1,4 +1,3 @@
-#!/bin/sh
 docker pull tekfik/chrome
 docker run -d --name chrome -e VNC_USER=app -e VNC_PASSWORD=password -e VNC_WIDTH=1300 -e VNC_HIGHT=780 -e BROSWER_WIDTH=1280 -e BROSWER_HIGHT=760 -e VNC_TimeZone=America/Los_Angeles --privileged -p 3000:3000 tekfik/chrome
 docker exec -it chrome /bin/bash
