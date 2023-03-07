@@ -28,4 +28,4 @@ docker exec -it chrome /bin/bash
   rm -rf chrome-web-docker-master
   rm -f master 
   exit
-docker restart chrome_web
+docker restart chrome
