@@ -1,6 +1,6 @@
 #!/bin/sh
 docker pull tekfik/chrome
-docker run --name chrome --privileged -p 5800:3000 -d tekfik/chrome
+docker run --name chrome --privileged -p 3000:3000 -d tekfik/chrome
 docker exec -it chrome /bin/bash
 yum -y install google-chrome-stable
 yum -y install sudo unzip
